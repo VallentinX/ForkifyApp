@@ -1,7 +1,6 @@
 import View from './views.js';
 import icons from 'url:../../img/icons.svg';
-import { Fraction } from 'fractional';
-
+import { Fraction } from '../../../node_modules/fractional';
 class RecipeView extends View {
   _parentEl = document.querySelector('.recipe');
   _errorRecipe = "Ups! We're sorry! The recepie couldn't be loaded. Try again!";
