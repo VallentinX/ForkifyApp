@@ -1,5 +1,6 @@
 import View from './views.js';
 import icons from 'url:../../img/icons.svg';
+
 class RecipeView extends View {
   _parentEl = document.querySelector('.recipe');
   _errorRecipe = "Ups! We're sorry! The recepie couldn't be loaded. Try again!";
@@ -11,16 +12,15 @@ class RecipeView extends View {
   }
 
   handlerUpdateServings(handler) {
-    this,
-      this._parentEl.addEventListener('click', function (e) {
-        const btn = e.target.closest('.btn-update-servings');
+    this._parentEl.addEventListener('click', function (e) {
+      const btn = e.target.closest('.btn-update-servings');
 
-        if (!btn) return;
+      if (!btn) return;
 
-        const { updateTo } = btn.dataset;
+      const { updateTo } = btn.dataset;
 
-        if (+updateTo > 0) handler(+updateTo);
-      });
+      if (+updateTo > 0) handler(+updateTo);
+    });
   }
 
   handlerBookmark(handler) {
@@ -99,7 +99,7 @@ class RecipeView extends View {
   <h2 class="heading-2">Recipe ingredients</h2>
   <ul class="recipe_ingredient-list">${this._data.ingredients
     .map(this._generateIngredient)
-    .join()}
+    .join('')}
   </ul>
 </div>
 
@@ -128,7 +128,7 @@ class RecipeView extends View {
           <use href="${icons}#icon-check"></use>
         </svg>
         <div class="recipe_quantity">${
-          !ingredient.quantity ? '' : ingredient.quantity
+          ingredient.quantity ? ingredient.quantity : ''
         }</div>
         <div class="recipe_description">
           <span class="recipe_unit">${ingredient.unit} </span>${

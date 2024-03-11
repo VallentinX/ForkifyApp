@@ -1,6 +1,6 @@
-import {async} from 'regenerator-runtime';
-import {API_URL, RecipesPerPage, API_KEY} from './config.js';
-import {AJAX} from './helpers.js';
+import { async } from 'regenerator-runtime';
+import { API_URL, RecipesPerPage, API_KEY } from './config.js';
+import { AJAX } from './helpers.js';
 
 export const state = {
   recipe: {},
@@ -14,7 +14,7 @@ export const state = {
 };
 
 const createRecipeObj = function (data) {
-  const {recipe} = data.data;
+  const { recipe } = data.data;
   return {
     /** Properties  */
     id: recipe.id,
@@ -26,7 +26,7 @@ const createRecipeObj = function (data) {
     cookingTime: recipe.cooking_time,
     image: recipe.image_url,
     sourceURL: recipe.source_url,
-    ...(recipe.key && {key: recipe.key}),
+    ...(recipe.key && { key: recipe.key }),
   };
 };
 
@@ -58,7 +58,7 @@ export const loadSearchRecipe = async function (query) {
         title: recipe.title,
         /** Properties Name Changed  */
         image: recipe.image_url,
-        ...(recipe.key && {key: recipe.key}),
+        ...(recipe.key && { key: recipe.key }),
       };
     });
 
@@ -137,7 +137,7 @@ export const uploadRecipe = async function (newRecipe) {
 
         const [quantity, unit, description] = ingredientArr;
 
-        return {quantity: quantity ? +quantity : null, unit, description};
+        return { quantity: quantity ? +quantity : null, unit, description };
       });
 
     const recipe = {
