@@ -18,7 +18,12 @@
     "url": "https://github.com/VallentinX/ForkifyApp/issues"
   },
   "dependencies": {
-    "modern-normalize": "^1.1.0"
+    "modern-normalize": "^1.1.0",
+    "core-js": "^3.36.0",
+    "fractional": "^1.0.0",
+    "img": "^3.0.3",
+    "parcel": "^2.12.0",
+    "regenerator-runtime": "^0.14.1"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.6.0",
